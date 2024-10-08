@@ -1,0 +1,274 @@
+/* General Styles */
+/* Background Image */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Section Styling */
+  .section {
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    color: #ff5f6d;
+  }
+  
+  /* Contact Buttons */
+  .contact-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff5f6d;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  
+  .contact-btn:hover {
+    transform: scale(1.05);
+    background-color: #ff6b6b;
+  }
+  
+  /* Navigation Bar Styling */
+  .navbar {
+    position: sticky;
+    top: 0;
+    background-color: #f9b2d6; /* Main Navbar Color */
+    padding: 15px; /* Increased padding for a better touch target */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for a modern look */
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar ul li {
+    margin: 0 20px; /* Increased margin for better spacing */
+  }
+  
+  .navbar ul li a {
+    color: white; /* Text color */
+    text-decoration: none; /* No underline */
+    font-size: 18px; /* Font size */
+    padding: 10px 15px; /* Padding around the button */
+    border-radius: 30px; /* Rounded edges */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition effects */
+    display: inline-block; /* Make sure the button behaves like a block element */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  }
+  
+  /* 3D Effect on Hover */
+  .navbar ul li a:hover {
+    transform: translateY(-3px) translateZ(0); /* Move button up slightly for 3D effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Deepens shadow on hover */
+  }
+  
+  /* Section Button Styles */
+  .cta-btn {
+    background-color: #f9b2d6; /* Main Navbar Color */
+    ; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 15px 25px; /* Padding around the button */
+    border-radius: 30px; /* Rounded button edges */
+    cursor: pointer; /* Pointer on hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transition effects */
+    text-decoration: none; /* No underline for links */
+    display: inline-block; /* Block element */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Initial shadow for depth */
+  }
+  
+  /* 3D Effect for CTA Buttons */
+  .cta-btn:hover {
+    transform: translateY(-3px) translateZ(0); /* Move button up slightly for 3D effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Shadow deepens on hover */
+  }
+  
+  /* Section Styling */
+  .section {
+    padding: 60px 20px; /* Adjusted padding for better spacing */
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 15px; /* Rounded corners for sections */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Smooth Fade-In Effect */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+    display: block;
+  }
+  
+  @keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  /* Comment Section */
+  textarea {
+    width: 80%;
+    height: 150px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #f9b2d6;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  textarea:focus {
+    border-color: #f9b2d6; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Stack navbar items on smaller screens */
+    }
+  
+    .navbar ul li {
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+  
+    .section {
+        padding: 40px 10px; /* Adjust section padding for smaller screens */
+    }
+  d
+    .cta-btn {
+        padding: 12px 25px; /* Adjust button size for smaller screens */
+    }
+  }
+  /* Contact Us Section Styling */
+  /* Contact Us Section Styling */
+  #contactUs {
+    background-color: #f9b2d6; /* Section background color */
+    color: white; /* Text color */
+    padding: 40px 20px; /* Padding around the section */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin-top: 30px; /* Space above the section */
+  }
+  
+  .contact-methods {
+    display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    justify-content: center; /* Center align buttons */
+    margin-top: 20px; /* Space above the button group */
+  }
+  
+  .contact-btn {
+    background-color: #fff; /* Button background color */
+    color: #f9b2d6; /* Text color */
+    border: none; /* No border */
+    padding: 15px 25px; /* Padding around the button */
+    margin: 10px; /* Margin between buttons */
+    border-radius: 30px; /* Rounded button edges */
+    font-size: 16px; /* Button font size */
+    cursor: pointer; /* Pointer on hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transition effects */
+    text-decoration: none; /* No underline for links */
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center; /* Center align icon and text vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Initial shadow for depth */
+  }
+  
+  .contact-btn i {
+    margin-right: 8px; /* Space between icon and text */
+  }
+  
+  .contact-btn:hover {
+    transform: translateY(-3px) translateZ(0); /* Move button up slightly for 3D effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Shadow deepens on hover */
+  }
+  
+  /* Responsive Design for Contact Us Section */
+  @media (max-width: 768px) {
+    .contact-methods {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: center; /* Center align buttons */
+    }
+  }
+  /* Navigation Bar Styling */
+  .navbar {
+    position: sticky;
+    top: 0;
+    background-color: #f9b2d6;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; /* Space between items and search box */
+    align-items: center; /* Center items vertically */
+  }
+  
+  /* Search Container */
+  .search-container {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Search Box Styles */
+  .search-box {
+    padding: 10px; /* Padding for the input */
+    border: 2px solid #f9b2d6; /* Border color matching theme */
+    border-radius: 20px; /* Rounded edges */
+    margin-left: 20px; /* Space from the navigation items */
+    outline: none; /* No outline */
+    transition: border 0.3s ease; /* Smooth border transition */
+  }
+  
+  /* Search Box Focus Effect */
+  .search-box:focus {
+    border-color: #f9b2d6; /* Matching background */
+    ; /* Change border color on focus */
+  }
+  
+  /* Search Button Styles */
+  .search-btn {
+    background-color: #f9b2d6; /* Matching background */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded edges */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer on hover */
+    margin-left: 10px; /* Space from the search box */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transition effects */
+  }
+  
+  /* 3D Effect for Search Button */
+  .search-btn:hover {
+    transform: translateY(-3px) translateZ(0); /* Lift button up */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Deepens shadow on hover */
+  }
+  
+  /* 3D Effect for Search Box */
+  .search-box:hover {
+    transform: translateY(-2px) translateZ(0); /* Lift search box slightly */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  }
