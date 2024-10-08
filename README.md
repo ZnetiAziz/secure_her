@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # secure_her
 ## Description
 A brief description of your project goes here.
@@ -32,3 +33,15 @@ CREATE TABLE comments (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+=======
+---
+title: Model 1
+emoji: 🦀
+colorFrom: green
+colorTo: green
+sdk: docker
+pinned: false
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> 59a8732e137501b7ce297d1fc07f5c2a6d2a2662
