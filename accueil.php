@@ -20,23 +20,22 @@ $username = $_SESSION['username']; // Get the username from the session
   <!-- Navigation Bar -->
   <div class="navbar">
     <ul>
-      <li><a href="accueil.php" class="nav-btn">Home</a></li>
-      <li><a href="education.html" class="nav-btn">Education</a></li>
-      <li><a href="application.php" class="nav-btn">Application</a></li>
-      <li><a href="communication.php" class="nav-btn">Communication</a></li>
-     
+        <li><a href="accueil.php" class="nav-btn">Home</a></li>
+        <li><a href="education.html" class="nav-btn">Education</a></li>
+        <li><a href="application.php" class="nav-btn">Application</a></li>
+        <li><a href="communication.php" class="nav-btn">Communication</a></li>
     </ul>
+    <!-- Add the logo in the search container section -->
     <div class="search-container">
-      <input type="text" placeholder="Search..." class="search-box" />
-      <button class="search-btn">🔍</button>
+        <img src="logo-removebg-preview.png" alt="Logo" class="logo"> <!-- Replace 'logo.png' with your logo file -->
     </div>
-  </div>
+</div>
 
   <!-- Home Section -->
   <section id="home" class="section fade-in">
     <h1>Welcome to Women Security, <?php echo htmlspecialchars($username); ?>!</h1> <!-- Display username here -->
     <p>Empowering and securing women globally through education, technology, and support.</p>
-    <button class="cta-btn" onclick="location.href='educative.html'">Learn More</button>
+    
   </section>
 
   <!-- Contact Us Section -->

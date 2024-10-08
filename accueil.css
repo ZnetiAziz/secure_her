@@ -272,3 +272,10 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow on hover */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
   }
+  /* Logo Styling */
+.logo {
+  height: 120px; /* Adjust the size of the logo */
+  width: auto;  /* Keep the aspect ratio */
+  margin-left: 20px; /* Optional: Space from the navbar items */
+  cursor: pointer; /* Change cursor to pointer */
+}

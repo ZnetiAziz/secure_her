@@ -41,24 +41,23 @@ $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav id="navbar" class="navbar">
+  <div class="navbar">
     <ul>
-      <li><a href="accueil.php" class="nav-btn">Home</a></li>
-      <li><a href="education.html" class="nav-btn">Education</a></li>
-      <li><a href="application.php" class="nav-btn">Application</a></li>
-      <li><a href="communication.php" class="nav-btn">Communication</a></li>
-      
+        <li><a href="accueil.php" class="nav-btn">Home</a></li>
+        <li><a href="education.html" class="nav-btn">Education</a></li>
+        <li><a href="application.php" class="nav-btn">Application</a></li>
+        <li><a href="communication.php" class="nav-btn">Communication</a></li>
     </ul>
+    <!-- Add the logo in the search container section -->
     <div class="search-container">
-      <input type="text" placeholder="Search..." class="search-box" />
-      <button class="search-btn">🔍</button>
+        <img src="logo-removebg-preview.png" alt="Logo" class="logo"> <!-- Replace 'logo.png' with your logo file -->
     </div>
-  </nav>
+</div>
 
   <!-- Comments Section -->
   <section id="commentaire" class="section fade-in">
-    <h2>Comments and Feedback</h2>
-    <p>We value your feedback! Please leave your thoughts and suggestions below:</p>
+    <h2>Share Your Experience</h2>
+    <p>We’d love to hear from you! Feel free to share your thoughts, ideas, or suggestions anonymously below:</p>
     
     <!-- Comment Form -->
     <form action="" method="POST">

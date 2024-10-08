@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Awareness Quiz</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background-color:rgb(237, 193, 204); 
+        }
+        h1 { text-align: center; }
+        .section { 
+            display: none; 
+            background: white; 
+            border-radius: 8px; 
+            padding: 20px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px; 
+        }
+        .question { 
+            margin: 10px 0; 
+        }
+        .answers input { 
+            margin-right: 10px; 
+        }
+        button { 
+            background-color: #6e9ff9; 
+            color:rgb(246, 191, 216) ; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 10px 15px; 
+            cursor: pointer; 
+        }
+        button:hover { 
+            background-color: #4cae4c; 
+        }
+        #interactive-message { 
+            display: none; 
+            text-align: center; 
+            margin-top: 20px; 
+            font-weight: bold; 
+            color: #28a745; 
+        }
+        .course-section { 
+            background-color: #e7bac6; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin-bottom: 15px; 
+        }
+    </style>
+    <script>
+        let currentSection = 1;
+
+        function showSection(sectionNumber) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.display = (index + 1 === sectionNumber) ? 'block' : 'none';
+            });
+        }
+
+        function checkAnswers(sectionNumber, answers) {
+            let allCorrect = true;
+            for (const [questionIndex, correctAnswer] of Object.entries(answers)) {
+                const selectedAnswer = document.querySelector(`input[name="q${sectionNumber}-${questionIndex}"]:checked`);
+                if (selectedAnswer === null || selectedAnswer.value !== correctAnswer) {
+                    allCorrect = false;
+                    break;
+                }
+            }
+            if (allCorrect) {
+                document.getElementById('interactive-message').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('interactive-message').style.display = 'none';
+                    if (sectionNumber < 6) {
+                        currentSection++;
+                        showSection(currentSection);
+                    } else {
+                        window.location.href = 'certificate.php'; // Redirect to the certificate page
+                    }
+                }, 2000); // Show message for 2 seconds
+            } else {
+                alert('Some answers are incorrect. Please try again.');
+            }
+        }
+
+        window.onload = function() {
+            showSection(currentSection); // Show the first section on load
+        };
+    </script>
+</head>
+<body>
+    <h1>Cybersecurity Awareness Quiz</h1>
+
+   <!-- Section 1: Basic Cybersecurity (Course + Quiz) -->
+<div class="section" id="section-1">
+    <div class="course-section">
+        <h2 style="font-size: 24px;">Introduction to Basic Cybersecurity</h2>
+        <p style="line-height: 1.8; font-size: 18px;">
+            <strong>In today's interconnected digital landscape, cybersecurity has become a fundamental concern for individuals, businesses, and governments alike.</strong> 
+            It involves the practice of safeguarding systems, networks, and sensitive information from unauthorized access, data breaches, or malicious attacks. 
+            With the rise of cybercrime, ensuring robust protection has never been more important.
+        </p>
+        <p style="line-height: 1.8; font-size: 18px;">
+            <strong>One of the most pervasive and dangerous cyber threats is phishing.</strong> 
+            Phishing is a type of social engineering attack where cybercriminals impersonate trusted entities—such as banks, online services, or even colleagues—to deceive individuals into disclosing personal or financial information. 
+            These attacks often come in the form of emails, text messages, or websites that appear legitimate, but upon closer inspection, they contain subtle clues, such as misspelled URLs or urgent requests for sensitive information.
+        </p>
+        <p style="line-height: 1.8; font-size: 18px;">
+            <strong>In addition to understanding threats like phishing, another fundamental measure in protecting one's digital presence is the use of strong passwords.</strong>
+            A strong password is one that is difficult for hackers to crack using techniques such as brute force attacks. 
+            Such passwords should be a combination of uppercase and lowercase letters, numbers, and special characters, and they should not contain easily guessed information like birthdays or common words.
+            To further enhance security, individuals should use unique passwords for each account and enable two-factor authentication (2FA) wherever possible.
+        </p>
+        <p style="line-height: 1.8; font-size: 18px;">
+            By adopting these basic cybersecurity practices—being cautious about phishing attempts and creating strong, unique passwords—individuals can significantly reduce the risk of falling victim to cyberattacks. 
+            As technology continues to evolve, staying informed and vigilant is key to safeguarding personal data and privacy.
+        </p>
+    </div>
+
+    <h2 style="font-size: 24px;">Basic Cybersecurity Questions</h2>
+
+    <div class="question" style="line-height: 1.8; font-size: 18px;">
+        <p>What is an example of phishing?</p>
+        <div class="answers">
+            <input type="radio" name="q1-1" value="A"> A. An email pretending to be from your bank.<br>
+            <input type="radio" name="q1-1" value="B"> B. A text message from a friend.<br>
+            <input type="radio" name="q1-1" value="C"> C. An online video.<br>
+            <input type="radio" name="q1-1" value="D"> D. A blog article.
+        </div>
+    </div>
+
+    <div class="question" style="line-height: 1.8; font-size: 18px;">
+        <p>What is the purpose of a strong password?</p>
+        <div class="answers">
+            <input type="radio" name="q1-2" value="A"> A. To remember your account.<br>
+            <input type="radio" name="q1-2" value="B"> B. To secure your personal information.<br>
+            <input type="radio" name="q1-2" value="C"> C. To earn loyalty points.<br>
+            <input type="radio" name="q1-2" value="D"> D. To access gaming sites.
+        </div>
+    </div>
+
+    
+
+    <div class="question" style="line-height: 1.8; font-size: 18px;">
+        <p>What should you do if you receive a suspicious email?</p>
+        <div class="answers">
+            <input type="radio" name="q1-3" value="A"> A. Immediately open any attachments.<br>
+            <input type="radio" name="q1-3" value="B"> B. Ignore and delete it without reporting.<br>
+            <input type="radio" name="q1-3" value="C"> C. Click the link to see if it is legitimate.<br>
+            <input type="radio" name="q1-3" value="D"> D. Verify the sender's authenticity before taking any action.
+        </div>
+    </div>
+
+    <button onclick="checkAnswers(1, {1: 'A', 2: 'B', 3: 'D'})" style="font-size: 18px;">Next</button>
+</div>
+
+ <!-- Section 2: Password Security -->
+<div class="section" id="section-2">
+    <div class="course-section">
+        <h2>Password Security Best Practices</h2>
+        <p>Password security is a critical component in protecting personal information from unauthorized access. A strong password should follow specific guidelines to maximize its strength and minimize the risk of being hacked. Here are some best practices:</p>
+        <ul>
+            <li><strong>Password Length:</strong> A strong password should be at least 12 characters long. The longer it is, the harder it is for cybercriminals to crack it using brute force attacks.</li>
+            <li><strong>Password Complexity:</strong> Include a mix of uppercase and lowercase letters, numbers, and special characters (e.g., `G5h!r7B2@X9m`). Avoid using easily guessable information like birthdates or common words.</li>
+            <li><strong>Regular Updates:</strong> It's essential to regularly update your passwords, especially for critical accounts like email, banking, or social media. Avoid reusing passwords across multiple platforms.</li>
+            <li><strong>Password Managers:</strong> Using a password manager, such as LastPass, 1Password, or Dashlane, is highly recommended. These tools generate and store unique, complex passwords for each of your accounts, so you don't have to remember them all.</li>
+            <li><strong>Two-Factor Authentication (2FA):</strong> Whenever possible, enable 2FA for your accounts. 2FA adds an extra layer of protection by requiring a second form of authentication (e.g., a code sent to your phone or email) in addition to your password. This ensures that even if your password is compromised, your account remains secure.</li>
+        </ul>
+        <p>By following these best practices, you can significantly reduce the likelihood of your accounts being compromised and ensure the safety of your personal information.</p>
+    </div>
+
+    <h2>Password Security Questions</h2>
+
+    <div class="question">
+        <p>What is the recommended length for a strong password?</p>
+        <div class="answers">
+            <input type="radio" name="q2-1" value="A">A. 4 characters.<br>
+            <input type="radio" name="q2-1" value="B">B. 8 characters.<br>
+            <input type="radio" name="q2-1" value="C">C. 12 characters.<br>
+            <input type="radio" name="q2-1" value="D">D. 16 characters.
+        </div>
+    </div>
+
+    <div class="question">
+        <p>What is the best option for password security?</p>
+        <div class="answers">
+            <input type="radio" name="q2-2" value="A">A. Use simple passwords.<br>
+            <input type="radio" name="q2-2" value="B">B. Write passwords on paper.<br>
+            <input type="radio" name="q2-2" value="C">C. Use a password manager.<br>
+            <input type="radio" name="q2-2" value="D">D. Change your password every month.
+        </div>
+    </div>
+
+    <div class="question">
+        <p>Which of the following adds an extra layer of security?</p>
+        <div class="answers">
+            <input type="radio" name="q2-3" value="A">A. Writing down your password.<br>
+            <input type="radio" name="q2-3" value="B">B. Enabling two-factor authentication (2FA).<br>
+            <input type="radio" name="q2-3" value="C">C. Using only numbers in your password.<br>
+            <input type="radio" name="q2-3" value="D">D. Sharing your password with a trusted friend.
+        </div>
+    </div>
+
+    <button onclick="checkAnswers(2, {1: 'C', 2: 'C', 3: 'B'})">Next</button>
+</div>
+
+
+    <!-- Section 3: Social Media Safety -->
+    <div class="section" id="section-3">
+        <div class="course-section">
+            <h2>Social Media Safety</h2>
+            <p>In today's digital age, social media platforms are widely used for communication, networking, and sharing experiences. However, it is crucial to be cautious when sharing personal information online. Avoid disclosing sensitive details, such as your bank information or home address, as this can lead to identity theft and fraud. Be mindful of the content you post, including images and statuses, as they can reveal more about you than you realize. Utilizing strong privacy settings is essential to control who can view your information. Always check your account's privacy settings and adjust them to limit visibility to trusted friends and family. Additionally, be wary of suspicious links and attachments shared through social media, as they can be vehicles for malware or phishing attempts. When receiving messages from unknown contacts, it’s best to verify their authenticity before interacting. Remember that even seemingly harmless posts can provide information to malicious actors, so think carefully before sharing any content online. Regularly reviewing your friends list and removing any connections you do not recognize can further enhance your security. Staying informed about the latest threats and practicing safe online behavior can significantly improve your social media experience</p>
+        </div>
+        <h2>Social Media Safety Questions</h2>
+        <div class="question">
+            <p>What should you avoid sharing on social media?</p>
+            <div class="answers">
+                <input type="radio" name="q3-1" value="A">A. Your favorite movies.<br>
+                <input type="radio" name="q3-1" value="B">B. Your bank details.<br>
+                <input type="radio" name="q3-1" value="C">C. A picture of your dog.<br>
+                <input type="radio" name="q3-1" value="D">D. Travel destinations.
+            </div>
+        </div>
+        <div class="question">
+            <p>What is the purpose of privacy settings on social media?</p>
+            <div class="answers">
+                <input type="radio" name="q3-2" value="A">A. To limit who can see your information.<br>
+                <input type="radio" name="q3-2" value="B">B. To make more friends.<br>
+                <input type="radio" name="q3-2" value="C">C. To protect from hackers.<br>
+                <input type="radio" name="q3-2" value="D">D. To organize your pictures.
+            </div>
+        </div>
+        <button onclick="checkAnswers(3, {1: 'B', 2: 'A'})">Next</button>
+    </div>
+
+    <!-- Section 4: Internet Security -->
+    <div class="section" id="section-4">
+        <div class="course-section">
+            <h2>General Internet Security</h2>
+            <p>Internet security encompasses various measures and practices designed to protect your online presence and personal information. One of the fundamental tools in internet security is a firewall, which acts as a barrier between your computer and unauthorized access from the internet. By monitoring incoming and outgoing traffic, a firewall helps to prevent malicious attacks and intrusions. Alongside firewalls, using updated antivirus software is crucial. This software detects and removes harmful programs that may infect your device through downloads, email attachments, or web browsing. To enhance your security further, avoid downloading files from untrusted sources, as these can harbor malware. Additionally, practicing safe browsing habits, such as not clicking on suspicious links or pop-ups, can significantly reduce your risk of encountering threats online. Regularly updating your software and operating system also helps patch vulnerabilities that cybercriminals could exploit. Using strong, unique passwords for each account adds an extra layer of protection. Lastly, consider employing two-factor authentication for sensitive accounts to bolster your security even more.</p>
+        </div>
+        <h2>Internet Security Questions</h2>
+        <div class="question">
+            <p>What is a firewall?</p>
+            <div class="answers">
+                <input type="radio" name="q4-1" value="A">A. A security measure to block unauthorized access.<br>
+                <input type="radio" name="q4-1" value="B">B. A type of malware.<br>
+                <input type="radio" name="q4-1" value="C">C. A wireless router.<br>
+                <input type="radio" name="q4-1" value="D">D. An Internet browser.
+            </div>
+        </div>
+        <div class="question">
+            <p>How can you protect yourself from viruses online?</p>
+            <div class="answers">
+                <input type="radio" name="q4-2" value="A">A. Disable your firewall.<br>
+                <input type="radio" name="q4-2" value="B">B. Click on every pop-up.<br>
+                <input type="radio" name="q4-2" value="C">C. Use an updated antivirus program.<br>
+                <input type="radio" name="q4-2" value="D">D. Download files from any website.
+            </div>
+        </div>
+        <button onclick="checkAnswers(4, {1: 'A', 2: 'C'})">Next</button>
+    </div>
+
+
+<!-- Section 5: Phishing and Email Analysis -->
+<div class="section" id="section-5">
+    <div class="course-section">
+        <h2>Understanding Phishing and Email Analysis</h2>
+        <p>Phishing is a malicious attempt to obtain sensitive information such as usernames, passwords, and credit card details by masquerading as a trustworthy entity in electronic communications. There are several types of phishing, including:</p>
+        <ul>
+            <li><strong>Spam:</strong> Unsolicited messages, often sent in bulk, that can include misleading offers or advertisements, but may not directly seek sensitive information.</li>
+            <li><strong>Scam:</strong> Messages that promise unrealistic rewards or financial gains, tricking users into providing personal information or making payments.</li>
+            <li><strong>Fraud:</strong> Involves more sophisticated schemes that often leverage social engineering techniques to deceive individuals into revealing confidential information.</li>
+        </ul>
+        <p>Email analysis is crucial in identifying and mitigating phishing threats. By examining email headers, individuals can uncover the origin of the email, track its path, and validate its authenticity. Tools like <a href="https://www.virustotal.com">VirusTotal</a> and <a href="https://www.abuseipdb.com">AbuseIPDB</a> can analyze links and attachments for known malicious behavior. For a comprehensive email analysis, it’s essential to check the following:</p>
+        <ul>
+            <li><strong>SPF (Sender Policy Framework):</strong> A security protocol that allows domain owners to specify which IP addresses are permitted to send emails on behalf of their domain, helping to prevent spoofing.</li>
+            <li><strong>DKIM (DomainKeys Identified Mail):</strong> An email authentication method that uses cryptographic signatures to verify that the email content has not been altered in transit and that it originates from a legitimate source.</li>
+            <li><strong>DMARC (Domain-based Message Authentication, Reporting, and Conformance):</strong> A protocol that builds on SPF and DKIM by providing instructions to email receivers about how to handle emails that fail authentication checks. It enables domain owners to receive reports on email authentication and usage.</li>
+        </ul>
+        <p>When analyzing phishing attempts, it's vital to look closely at the email's subject line, sender's address, and any URLs contained within. Hovering over links (without clicking) can reveal their true destination, allowing users to assess whether the link is legitimate. By employing open-source tools and techniques to analyze emails, individuals can protect themselves from falling victim to phishing scams.</p>
+    </div>
+    <h2>Questions on Phishing and Email Analysis</h2>
+    <div class="question">
+        <p>What type of phishing email promises unrealistic rewards?</p>
+        <div class="answers">
+            <input type="radio" name="q5-1" value="A">A. Spam.<br>
+            <input type="radio" name="q5-1" value="B">B. Scam.<br>
+            <input type="radio" name="q5-1" value="C">C. Fraud.<br>
+            <input type="radio" name="q5-1" value="D">D. Phishing.<br>
+        </div>
+    </div>
+    <div class="question">
+        <p>What does SPF help to prevent?</p>
+        <div class="answers">
+            <input type="radio" name="q5-2" value="A">A. Spoofing.<br>
+            <input type="radio" name="q5-2" value="B">B. Phishing.<br>
+            <input type="radio" name="q5-2" value="C">C. Spam.<br>
+            <input type="radio" name="q5-2" value="D">D. Scams.<br>
+        </div>
+    </div>
+
+    
+    
+    <div class="question">
+        <p>What should you check to verify if an email is legitimate?</p>
+        <div class="answers">
+            <input type="radio" name="q5-3" value="A">A. Subject line only.<br>
+            <input type="radio" name="q5-3" value="B">B. Sender's address only.<br>
+            <input type="radio" name="q5-3" value="C">C. Links and headers.<br>
+            <input type="radio" name="q5-3" value="D">D. Email body only.<br>
+        </div>
+    </div>
+    
+
+<!-- Question 3 with email image 2 -->
+
+<button onclick="checkAnswers(5, {1: 'B', 2: 'A', 3:'C', })">Next</button>
+</div>
+
+    <!-- Section 6: Digital Security Laws and Women's Rights -->
+    <div class="section" id="section-6">
+        <div class="course-section">
+            <h2>Digital Security Laws and Women's Rights</h2>
+            <p>Understanding digital security laws is crucial for protecting individual rights in the online environment. Various laws exist to safeguard individuals from online harassment and abuse, recognizing that women, in particular, are often disproportionately targeted in digital spaces. The Digital Protection Act serves as a legal framework that outlines the rights of individuals, ensuring protection against cyberbullying and harassment. It mandates online platforms to establish clear policies for reporting abuse and outlines legal consequences for offenders. Women should be aware of their rights and the resources available to them, including hotlines and legal aid services that specialize in online harassment cases. Familiarity with these reporting procedures empowers women to take action and seek justice when faced with online threats. Furthermore, many regions have enacted the Cyberbullying Prevention Act, which aims to prevent online harassment and promote safe online behavior. This law encourages schools, communities, and online platforms to work collaboratively in educating individuals about the importance of respectful online interaction. If a woman encounters online harassment, the best course of action is to report the incident to law enforcement, as they can provide immediate support and guidance. Ignoring harassment or deleting accounts may lead to further victimization, and posting about it on social media can sometimes escalate the situation. Therefore, understanding the legal framework surrounding digital security not only helps in protecting one's rights but also fosters a safer online environment for everyone.</p>
+        </div>
+        <h2>Questions on Security Laws and Women's Rights</h2>
+        <div class="question">
+            <p>What law protects individuals from online harassment?</p>
+            <div class="answers">
+                <input type="radio" name="q6-1" value="A">A. Digital Protection Act.<br>
+                <input type="radio" name="q6-1" value="B">B. Cyberbullying Prevention Act.<br>
+                <input type="radio" name="q6-1" value="C">C. Internet Regulation Act.<br>
+                <input type="radio" name="q6-1" value="D">D. Social Media Protection Law.
+            </div>
+        </div>
+        <div class="question">
+            <p>What should women do if they encounter harassment online?</p>
+            <div class="answers">
+                <input type="radio" name="q6-2" value="A">A. Report the incident to law enforcement.<br>
+                <input type="radio" name="q6-2" value="B">B. Ignore it.<br>
+                <input type="radio" name="q6-2" value="C">C. Post about it on social media.<br>
+                <input type="radio" name="q6-2" value="D">D. Delete their account.
+            </div>
+        </div>
+        <button onclick="checkAnswers(6, {1: 'B', 2: 'A'})">Finish</button>
+    </div>
+    
+
+    <div id="interactive-message">Congratulations ...</div>
+</body>
+</html>
